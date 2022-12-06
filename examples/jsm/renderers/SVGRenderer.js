@@ -281,8 +281,11 @@ class SVGRenderer {
 					const x = _vector3.x * _svgWidthHalf;
 					const y = - _vector3.y * _svgHeightHalf;
 
+					const sx = camera.zoom * object.scale.x;
+					const sy = camera.zoom * object.scale.y;
+
 					const node = object.node;
-					node.setAttribute( 'transform', 'translate(' + x + ',' + y + ')' );
+					node.setAttribute( 'transform', 'translate(' + x + ',' + y + ') ' + 'scale(' + sx + ',' + sy + ')');
 
 					_svg.appendChild( node );
 
